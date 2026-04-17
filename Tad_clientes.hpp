@@ -3,10 +3,10 @@ using namespace std;
 
 struct Cliente{
     string nome;
-    int qtd_boletos;
+    int qtd_tempo;
 };
 
-void montaCliente(Cliente &novo, string nome, int qtd_boletos){
+void montaCliente(Cliente &novo, string nome, int qtd_tempo){
     novo.nome = nome;
-    novo.qtd_boletos = qtd_boletos;
+    novo.qtd_tempo = qtd_tempo;
 }
