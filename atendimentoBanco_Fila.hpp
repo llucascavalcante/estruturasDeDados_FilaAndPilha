@@ -3,7 +3,7 @@ using namespace std;
 
 template <typename TIPO>
 struct Elemento{
-    TIPO elemento;
+    TIPO dado;
     Elemento<TIPO> *proximo;
 };
 
@@ -18,10 +18,10 @@ void iniciaListaClientes(Lista<TIPO> &lista){
 }
 
 template <typename TIPO>
-void adicionaElemento(Lista<TIPO> &lista, TIPO &elemento){
+void adicionaElemento(Lista<TIPO> &lista, TIPO &dado){
     Elemento<TIPO> *novo = new Elemento<TIPO>;
 
-    novo->elemento = elemento;
+    novo->elemento = dado;
     novo->proximo = NULL;
 
     if(lista.inicio == NULL){

@@ -16,12 +16,12 @@ No final mostre a quantidade de unidades de tempo total necessárias para atende
 Falta fazer:
 
 Criar operador para mostrar clientes
-Criar clientes com numero de unidades de tempo aleatório (quantidade de boletos aleatórios)
+Criar clientes com numero de unidades de tempo aleatório na função adicionaElemento 
 Função de atendimento que contem um laço que usa as unidades de tempo de cada cliente para realizar o atendimento
 Cada vez que for preencher um cliente novo, as unidades de tempo tem que ser preenchidas aleatoriamente, novamente.
 */
 #include <iostream>
-#include "atendimentoBanco.hpp"
+#include "atendimentoBanco_Fila.hpp"
 #include "Tad_clientes.hpp"
 #include "time.h"
 using namespace std;
@@ -36,7 +36,7 @@ int main(){
 
     iniciaListaClientes(lista);
     adicionaElemento(lista, a1); //cria clientes com qtdTempo aleatorio
-    
+
     /* 
     removeElemento(lista, a1); //Realiza o atendimento do cliente em um laço for (decrementando a quantidade de tempo dele) 
     e somando as unidades de tempo de todos os clientes para dizer no final quanto tempo deu 
