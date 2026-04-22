@@ -27,16 +27,34 @@ Cada vez que for preencher um cliente novo, as unidades de tempo tem que ser pre
 using namespace std;
 
 int main(){
-    Cliente a1, a2, a3;
-    montaCliente(a1, "Lucas", 3);
-    montaCliente(a2, "Jorge", 2);
-    montaCliente(a3, "Robert", 4);
+    srand(time(NULL));
+
+    Cliente a1, a2, a3, a4, a5;
+    int r1 = (1 + rand() % 5);
+    int r2 = (1 + rand() % 5);
+    int r3 = (1 + rand() % 5);
+    int r4 = (1 + rand() % 5);
+    int r5 = (1 + rand() % 5);
+
+    montaCliente(a1, "Lucas", r1);
+    montaCliente(a2, "Jorge", r2);
+    montaCliente(a3, "Robert", r3);
+    montaCliente(a4, "Bartolomeu", r4);
+    montaCliente(a5, "Juremo", r5);
+
+
 
     Lista<Cliente> lista;
 
     iniciaListaClientes(lista);
-    adicionaElemento(lista, a1); //cria clientes com qtdTempo aleatorio
+    queue(lista, a1);
+    queue(lista, a2);
+    queue(lista, a3);
+    queue(lista, a4);
+    queue(lista, a5);
 
+    imprimirLista(lista);
+    
     /* 
     removeElemento(lista, a1); //Realiza o atendimento do cliente em um laço for (decrementando a quantidade de tempo dele) 
     e somando as unidades de tempo de todos os clientes para dizer no final quanto tempo deu 
