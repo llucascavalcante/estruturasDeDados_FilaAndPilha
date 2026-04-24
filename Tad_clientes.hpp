@@ -6,9 +6,10 @@ struct Cliente{
     int qtd_tempo;
 };
 
-void montaCliente(Cliente &novo, string nome, int qtd_tempo){
-    novo.nome = nome;
-    novo.qtd_tempo = qtd_tempo;
+void montaCliente(string nome, int qtd_tempo){
+    Cliente *novoCliente = new Cliente;
+    novoCliente->nome = nome;
+    novoCliente->qtd_tempo = qtd_tempo;
 }
 
 inline ostream& operator<<(ostream &on, Cliente &cliente){
