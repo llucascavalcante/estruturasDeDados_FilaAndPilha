@@ -44,6 +44,8 @@ void queue(Lista<TIPO> &lista, TIPO &dado){
     return;
 };
 
+/*
+
 template <typename TIPO>
 Elemento<TIPO> dequeue(Lista<TIPO> &lista){
     Elemento<TIPO> *nav = lista.inicio;
@@ -59,6 +61,8 @@ Elemento<TIPO> dequeue(Lista<TIPO> &lista){
 
     while(nav-)
 }
+    
+*/
 
 template <typename TIPO>
 void imprimirLista(Lista<TIPO> lista){

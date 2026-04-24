@@ -6,10 +6,12 @@ struct Cliente{
     int qtd_tempo;
 };
 
-void montaCliente(string nome, int qtd_tempo){
+template <typename TIPO>
+void montaCliente(Lista<TIPO> &lista, string nome, int qtd_tempo){
     Cliente *novoCliente = new Cliente;
     novoCliente->nome = nome;
     novoCliente->qtd_tempo = qtd_tempo;
+    queue(lista, novoCliente);
 }
 
 inline ostream& operator<<(ostream &on, Cliente &cliente){

@@ -37,30 +37,22 @@ int main(){
     int qtdClientes;
 
     Lista<Cliente> clientes;
+    iniciaListaClientes(clientes);
 
 
     cout<<"qtd de clientes: "<<qtdClientes;
     for(int i = 0; i < qtdClientes; i++){
-        int r1 = (1 + rand() % 5);
-        string nome = gerarNome()
-        montaCliente()
+        int r = (1 + rand() % 5);
+        string nome = gerarNome(gen);
+        montaCliente(clientes, nome, r);
     }
 
+    imprimirLista(clientes);
 
-
-
-
-
-    
-
-    iniciaListaClientes(lista);
-
-
-    imprimirLista(lista);
     
     /* 
-    removeElemento(lista, a1); //Realiza o atendimento do cliente em um laço for (decrementando a quantidade de tempo dele) 
-    e somando as unidades de tempo de todos os clientes para dizer no final quanto tempo deu 
+        removeElemento(lista, a1); //Realiza o atendimento do cliente em um laço for (decrementando a quantidade de tempo dele) 
+        e somando as unidades de tempo de todos os clientes para dizer no final quanto tempo deu 
     */
 
 
