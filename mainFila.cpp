@@ -22,8 +22,8 @@ Cada vez que for preencher um cliente novo, as unidades de tempo tem que ser pre
 */
 #include <iostream>
 #include <vector>
-#include "atendimentoBanco_Fila.hpp"
-#include "Tad_clientes.hpp"
+#include "atendimentoBanco_Fila.h"
+#include "Tad_clientes.h"
 #include "time.h"
 #include "geraDados.hpp"
 
@@ -36,18 +36,19 @@ int main(){
 
     int qtdClientes;
 
-    Lista<Cliente> clientes;
-    iniciaListaClientes(clientes);
+    Lista<Cliente> fila;
+    iniciaListaClientes(fila);
 
 
-    cout<<"qtd de clientes: "<<qtdClientes;
+    cout<<"insira a qtd de clientes:\n";
+    cin>> qtdClientes;
     for(int i = 0; i < qtdClientes; i++){
         int r = (1 + rand() % 5);
         string nome = gerarNome(gen);
-        montaCliente(clientes, nome, r);
+        montaCliente(fila, nome, r);
     }
 
-    imprimirLista(clientes);
+    imprimirLista(fila);
 
     
     /* 

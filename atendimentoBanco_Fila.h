@@ -23,7 +23,7 @@ void iniciaListaClientes(Lista<TIPO> &lista){
 }
 
 template <typename TIPO>
-void queue(Lista<TIPO> &lista, TIPO &dado){
+bool queue(Lista<TIPO> &lista, TIPO dado){
     Elemento<TIPO> *novo = new Elemento<TIPO>;
 
     novo->dado = dado;
@@ -31,7 +31,7 @@ void queue(Lista<TIPO> &lista, TIPO &dado){
 
     if(lista.inicio == NULL){
         lista.inicio = novo;
-        return;
+        return false;
     }
 
     Elemento<TIPO> *nav;
@@ -41,8 +41,8 @@ void queue(Lista<TIPO> &lista, TIPO &dado){
         nav = nav->proximo;
     }
     nav->proximo = novo;
-    return;
-};
+    return true;
+}
 
 /*
 
