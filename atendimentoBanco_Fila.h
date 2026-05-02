@@ -23,7 +23,7 @@ void iniciaListaClientes(Lista<TIPO> &lista){
 }
 
 template <typename TIPO>
-bool queue(Lista<TIPO> &lista, TIPO dado){
+void queue(Lista<TIPO> &lista, TIPO dado){ //insere no fim (clientes para atender)
     Elemento<TIPO> *novo = new Elemento<TIPO>;
 
     novo->dado = dado;
@@ -31,7 +31,6 @@ bool queue(Lista<TIPO> &lista, TIPO dado){
 
     if(lista.inicio == NULL){
         lista.inicio = novo;
-        return false;
     }
 
     Elemento<TIPO> *nav;
@@ -41,28 +40,29 @@ bool queue(Lista<TIPO> &lista, TIPO dado){
         nav = nav->proximo;
     }
     nav->proximo = novo;
-    return true;
 }
 
-/*
 
 template <typename TIPO>
-Elemento<TIPO> dequeue(Lista<TIPO> &lista){
-    Elemento<TIPO> *nav = lista.inicio;
+Elemento<TIPO> dequeue(Lista<TIPO> &lista){ //Remove no inicio (atende os clientes), retorna cliente atendido
 
-    //Tentar entender a lógica desse código
-    nav->dado = lista.inicio->dado;
-    while(lista.inicio != NULL){
-        lista.inicio = lista.inicio->proximo;
-    }
+    Elemento<TIPO> *temp = lista.inicio;
+    lista.inicio = lista.inicio->proximo;
 
-    return nav->dado;
-    delete lista.inicio;
-
-    while(nav-)
+    return temp;
+    delete temp;
 }
-    
-*/
+
+
+template <typename TIPO>
+bool dequeue(Lista<TIPO> &lista){ //Remove no inicio (atende os clientes), sem retornar cliente atendido
+
+    Elemento<TIPO> *temp = lista.inicio;
+    lista.inicio = lista.inicio->proximo;
+
+    return temp;
+    delete temp;
+}
 
 template <typename TIPO>
 void imprimirLista(Lista<TIPO> lista){

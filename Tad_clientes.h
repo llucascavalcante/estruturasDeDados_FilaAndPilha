@@ -6,11 +6,15 @@ struct Cliente{
     int qtd_tempo;
 };
 
+/*
+
+*/ 
+
 template <typename TIPO>
-void montaCliente(Lista<TIPO> *&lista, string nome, int qtd_tempo){
-    Cliente *novoCliente = new Cliente;
-    novoCliente->nome = nome;
-    novoCliente->qtd_tempo = qtd_tempo;
+void montaClienteAle(Lista<TIPO> &lista, Cliente novoCliente, string nome){
+    int r = (1 + rand() % 5);
+    novoCliente.nome = nome;
+    novoCliente.qtd_tempo = r;
     queue(lista, novoCliente);
 }
 
@@ -19,3 +23,4 @@ inline ostream& operator<<(ostream &on, Cliente &cliente){
     on <<"Qtds de tempo: "<< cliente.qtd_tempo;
     return on;
 }
+
